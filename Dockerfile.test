@@ -4,6 +4,8 @@ RUN chmod +x /opt/app/run.sh
 COPY ./ /work
 ARG release_repo
 ARG release_version
-WORKDIR /work
+echo "$release_repo"
+echo "$release_version"
+WORKDIR /work                      
 RUN /opt/app/run.sh $release_repo $release_version
 ENTRYPOINT [ "/bin/sh" ]
