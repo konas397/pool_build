@@ -1,0 +1,7 @@
+FROM konas397/mygitdiff2fly:1.0
+COPY run.sh /opt/app/
+RUN chmod +x /opt/app/run.sh
+COPY ./ /work
+WORKDIR /work
+RUN /opt/app/run.sh git@github.com:konas397/release.git
+ENTRYPOINT [ "/bin/sh" ]
