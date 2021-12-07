@@ -3,5 +3,5 @@ COPY run.sh /opt/app/
 RUN chmod +x /opt/app/run.sh
 COPY ./ /work
 WORKDIR /work
-RUN /opt/app/run.sh git@github.com:konas397/release.git
+RUN /opt/app/run.sh git@github.com:konas397/release.git 1
 ENTRYPOINT [ "/bin/sh" ]
