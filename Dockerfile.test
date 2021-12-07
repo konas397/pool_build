@@ -1,6 +1,6 @@
 FROM konas397/mygitdiff2fly:1.0
 COPY run.sh /opt/app/
-RUN chmod +x /opt/app/run.sh
+#RUN chmod +x /opt/app/run.sh
 COPY ./ /work
 ARG release_repo
 ARG release_version
