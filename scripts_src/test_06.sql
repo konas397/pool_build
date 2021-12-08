@@ -1,2 +1,2 @@
-create table t5 (f1 number);
+create table t6 (f1 number);
 /
