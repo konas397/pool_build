@@ -1,4 +1,4 @@
-FROM konas397/mygitdiff2fly:1.0
+FROM konas397/mygitdiff2fly:1.0 as release_src
 COPY run.sh /opt/app/
 RUN chmod +x /opt/app/run.sh
 COPY ./ /work
@@ -6,3 +6,6 @@ ARG release_repo
 ARG release_version
 WORKDIR /work                      
 RUN /opt/app/run.sh $release_repo $release_version
+
+FROM konas397/flyway:7.10.0
+COPY --from=release_src /tmp_flyway/flyway /work/
