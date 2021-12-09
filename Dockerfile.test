@@ -7,6 +7,6 @@ ARG release_version
 WORKDIR /work                      
 RUN /opt/app/run.sh $release_repo $release_version
 
-FROM konas397/flyway:7.09.0
+FROM konas397/flyway:7.08.0
 COPY --from=release_src /tmp_flyway/flyway /work/
 COPY ./flyway.conf /work
